@@ -41,4 +41,20 @@ class Reader(object):
     """Class who will read in YML files."""
     def __init__(self, file):
         """Constructor of this class."""
+        self.file = file
+        self.lines = []
+        self.subcategory = []
+
+    def read(self):
+        """Start reading the file."""
+        with open(self.file, "r") as f:
+            self.in_f = f
+        self.lines = self.in_f.split("\n")
+        for i in self.lines:
+            sub = i.split(":")
+            if sub[1] == "" or sub[1] == " ":
+                ...
+
+    def start_section(self, name):
+        """start reading a subCategory"""
         ...
