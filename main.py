@@ -1,4 +1,4 @@
-"""YML python librairie. This librairie allow python developpeurs to open, create and edit .yml files."""
+"""YML python librairy. This librairie allow python developpers to open, create and edit .yml files."""
 
 class YMLFile(object):
     """Class for YML files."""
