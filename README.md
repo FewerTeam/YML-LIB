@@ -4,13 +4,13 @@ A Python 3 librairy for open, create and edit .yml files.
 
 # Documentation of this project is in "DOC/Doc.html"
 ### Format of the files :
-\#a comment
+  \#a comment
 
-value_name: value_in_str alWAYS ! \#with another comments
+  value_name: value_in_str alWAYS ! \#with another comments
 
-section_name:
+  section_name:
 
     an_othervalue: 4.5 \#always a string
 
 ### Format in this lib :
-yml = {"value_name" : "value_in_str", "section_name" : {"an_othervalue" : "4.5"}}   \#It remove the comments !
+  yml = {"value_name" : "value_in_str", "section_name" : {"an_othervalue" : "4.5"}}   \#It remove the comments !
