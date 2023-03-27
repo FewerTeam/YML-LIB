@@ -46,7 +46,7 @@ class Reader(object):
                 print("One comment line skipped !")
                 continue    #Go to next line if all the line is a comment
             self.lines2.append(i.split("#")[0]) #Remove comments
-        for self.i in self.lines2:
+        for self.j, self.i in enumerate(self.lines2):
             x = self.i.split(": ")
             if len(x) == 0:
                 raise ymlerrors.YMLSyntaxException("A line haven't got \": \" caracter and isn't a comment !\n--> SyntaxError")
@@ -63,7 +63,9 @@ class Reader(object):
         """start reading a subCategory
         Arguments:
         name : the name of the section (str)"""
-        
+        path = {}
+        w = self.lines2[self.j-len(self.lines2)]
+        print("Starting new section")
 
     def add_value(self, name, value):
         """start reading a value
@@ -75,4 +77,3 @@ class Reader(object):
     def __del__(self):
         """Will be completed later, for destroy all and clear memory"""
         ...
-        
