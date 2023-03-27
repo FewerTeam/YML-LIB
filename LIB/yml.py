@@ -66,6 +66,7 @@ class Reader(object):
         path = {}
         w = self.lines2[self.j-len(self.lines2)]
         print("Starting new section")
+        raise ymlerrors.InDeveloppementWarning
 
     def add_value(self, name, value):
         """start reading a value

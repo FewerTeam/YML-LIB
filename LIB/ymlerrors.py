@@ -3,3 +3,6 @@
 class YMLSyntaxException(SyntaxError):
     """Used when there is a syntax error in an yml file"""
     pass
+
+class InDeveloppementWarning(Warning):
+    pass
