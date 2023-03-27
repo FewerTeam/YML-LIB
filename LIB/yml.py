@@ -21,17 +21,6 @@ class YMLFile(object):
             self.self = self.path + "\\" + self. file
         ...
 
-class SubCategory(object):
-    """Subcategory in a YML file"""
-    def __init__(self, name):
-        """Constructor"""
-        ...
-
-class Value(object):
-    """Value in a YML file"""
-    def __init__(self, name, default):
-        ...
-
 class Editor(object):
     """Class who will edit in YML files."""
     def __init__(self, file, out="file.yml"):
@@ -44,7 +33,7 @@ class Reader(object):
         """Constructor of this class."""
         self.file = file
         self.lines = []
-        self.subcategory = []
+        self.path = {}
 
     def read(self):
         """Start reading the file."""
@@ -57,8 +46,8 @@ class Reader(object):
                 print("One comment line skipped !")
                 continue    #Go to next line if all the line is a comment
             self.lines2.append(i.split("#")[0]) #Remove comments
-        for i in self.lines2:
-            x = i.split(": ")
+        for self.i in self.lines2:
+            x = self.i.split(": ")
             if len(x) == 0:
                 raise ymlerrors.YMLSyntaxException("A line haven't got \": \" caracter and isn't a comment !\n--> SyntaxError")
             elif len(x) > 1:
@@ -68,11 +57,22 @@ class Reader(object):
                 continue
             else:
                 self.add_value(x[0], x[1])
+                continue
 
     def add_section(self, name):
-        """start reading a subCategory"""
-        ...
+        """start reading a subCategory
+        Arguments:
+        name : the name of the section (str)"""
+        
 
-    def add_value(self, name):
-        """start reading a value"""
+    def add_value(self, name, value):
+        """start reading a value
+        Arguments:
+        name : the name of the value (str)
+        value : the value itself (ALWAYS str ! --> #will be returned to a str)"""
+        self.path[name] = value
+
+    def __del__(self):
+        """Will be completed later, for destroy all and clear memory"""
         ...
+        
