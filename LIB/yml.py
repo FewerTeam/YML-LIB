@@ -37,6 +37,7 @@ class Reader(object):
 
     def read(self):
         """Start reading the file."""
+        self.nblines = 0
         with open(self.file, "r") as f:
             self.in_f = f   #read the file
         self.lines = self.in_f.split("\n")
@@ -46,27 +47,15 @@ class Reader(object):
                 print("One comment line skipped !")
                 continue    #Go to next line if all the line is a comment
             self.lines2.append(i.split("#")[0]) #Remove comments
-        for self.j, self.i in enumerate(self.lines2):
-            x = self.i.split(": ")
-            if len(x) == 0:
-                raise ymlerrors.YMLSyntaxException("A line haven't got \": \" caracter and isn't a comment !\n--> SyntaxError")
-            elif len(x) > 1:
-                raise ymlerrors.YMLSyntaxException("A line have more than one \": \" caracter and isn't a comment !\n--> SyntaxError")
-            if x[1] == "":
-                self.add_section(x[0])
-                continue
-            else:
-                self.add_value(x[0], x[1])
-                continue
+        self.maxnblines = len(self.lines2)
+        
 
-    def add_section(self, name):
+    def add_section(self, name, indent):
         """start reading a subCategory
         Arguments:
-        name : the name of the section (str)"""
-        path = {}
-        w = self.lines2[self.j-len(self.lines2)]
-        print("Starting new section")
-        raise ymlerrors.InDeveloppementWarning
+        name : the name of the section (str)
+        --> return a dictionnary"""
+        
 
     def add_value(self, name, value):
         """start reading a value
