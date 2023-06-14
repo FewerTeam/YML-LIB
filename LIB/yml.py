@@ -2,12 +2,12 @@
 import ymlerrors
 
 #######################################################
-# FOR THIS LIBRAIRY, USE PATH WITH "\" AND NOT "/"    #
+# FOR THIS LIBRAIRY, USE PATH WITH "\\" AND NOT "/"    #
 #######################################################
 
 class YMLFile(object):
     """Class for YML files."""
-    def __init__(self, path, name):
+    def __init__(self, path:str, name:str):
         """Constructor of this class.
         Arguments :
         - path : the path to the file (str)
