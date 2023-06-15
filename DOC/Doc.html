@@ -13,6 +13,8 @@
                 <h3>Read a file</h3>
                 <code>import pyml<br>
                     <br>
-                    file = yml.
+                    file = yml.YMLFile("path\\to\\file", "filename.yml")
+                    f = file.read()
+                    print(f["api.key"])
     </body>
 </html>
