@@ -20,6 +20,16 @@ class YMLFile(object):
         else:
             self.self = self.path + "\\" + self. file
         ...
+        
+    def read(self):
+        """Read the file and return a dico"""
+        f = open(self.path, "r")
+        content = f.read()
+        f.close()
+        
+        dico = {}
+        
+        return dico
 
 class Editor(object):
     """Class who will edit in YML files."""
